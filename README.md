@@ -1,73 +1,48 @@
 # React + TypeScript + Vite
+# Hash#AI — The Neural Grid
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Hash#AI** is a futuristic, high-performance web platform representing the next generation of decentralized artificial intelligence and autonomous agents. This project showcases a "Cosmic Fusion" design aesthetic, leveraging advanced animations, glassmorphism, and reactive UI patterns to create an immersive developer experience.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[**View Live Deployment**](#) *(https://harshitsrivastavaaaa.github.io/hash-ai/)*
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🌌 Immersive UI/UX
+* **Cosmic Fusion Theme:** A dynamic color palette shifting between Fuchsia, Violet, Cyan, and Deep Blue.
+* **Parallax Backgrounds:** Living, breathing ambient gradients that react to scroll position.
+* **Glassmorphism:** High-performance blur effects and frosted glass UI elements.
+* **Cinematic Layouts:** "Control Deck" style navigation and 16:9 theater modes for tool previews.
 
-## Expanding the ESLint configuration
+### ⚡ Interactive Components
+* **Neural Studio:** A split-screen playground to simulate AI tools (Code Synthesis, Data BI, Neural Diffusion).
+* **Research Timeline:** A vertical, responsive roadmap visualization using flexbox and absolute positioning.
+* **Spotlight Cards:** Mouse-tracking radial gradient effects on feature cards.
+* **Code Windows:** Syntax-highlighted, animated terminal simulations.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🛠️ Tech Stack
+* **Framework:** [React] (Vite)
+* **Language:** [TypeScript]
+* **Styling:** [Tailwind CSS]
+* **Animations:** [Framer Motion]
+* **Icons:** [Lucide React]
+* **Routing:** [React Router DOM]
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📦 Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Clone the repository and install dependencies:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+```bash
+# Clone the repo
+git clone [https://github.com/your-username/hash-ai.git](https://github.com/your-username/hash-ai.git)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# Navigate to directory
+cd hash-ai
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Install dependencies
+npm install
+# or
+yarn install
