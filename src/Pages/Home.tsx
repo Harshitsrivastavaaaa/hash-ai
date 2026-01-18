@@ -4,6 +4,7 @@ import {
   useScroll,
   useTransform,
   useMotionValue,
+  easeInOut,
 } from "framer-motion";
 import {
   Bot,
@@ -79,7 +80,7 @@ const features = [
 // --- ANIMATIONS ---
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeInOut } }
 };
 
 const staggerContainer = {
@@ -404,7 +405,9 @@ const Home = () => {
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                 <SpotlightCard className="h-full border border-white/10 rounded-3xl bg-[#0a0a0a]/50 p-8 backdrop-blur-sm hover:border-fuchsia-500/30 transition-colors group">
                   <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${f.bg} ${f.color} group-hover:scale-110 transition-transform duration-300`}>
-                    {React.cloneElement(f.icon as React.ReactElement, { className: "w-7 h-7" })}
+                    <div className="w-7 h-7">
+                      {React.cloneElement(f.icon as React.ReactElement)}
+                    </div>
                   </div>
                   <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-fuchsia-300 transition-colors">{f.title}</h3>
                   <p className="text-gray-400 leading-relaxed mb-8">{f.desc}</p>

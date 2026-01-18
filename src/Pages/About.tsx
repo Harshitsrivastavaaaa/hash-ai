@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { 
-  Users, 
   Globe, 
   Shield, 
   Code2, 
