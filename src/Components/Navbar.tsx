@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BrainCircuit, Menu, X, ArrowRight } from 'lucide-react';
+import { BrainCircuit, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -9,6 +9,7 @@ const Navbar = () => {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const location = useLocation();
 
+  // Handle scroll effect for dynamic sizing
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
@@ -17,6 +18,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when route changes
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
@@ -76,17 +78,13 @@ const Navbar = () => {
         </div>
 
         {/* --- Right Actions --- */}
-        <div className="hidden md:flex items-center gap-3 pr-1">
+        <div className="hidden md:flex items-center pr-2">
           <Link 
             to="/login" 
-            className="text-sm font-bold text-slate-500 hover:text-violet-600 px-4 py-2 transition-colors"
+            className="text-sm font-bold text-slate-600 hover:text-violet-600 px-4 py-2 transition-colors"
           >
             Log in
           </Link>
-          <button className="group relative flex items-center gap-2 overflow-hidden rounded-full bg-slate-900 text-white px-5 py-2.5 text-sm font-bold shadow-lg shadow-slate-900/20 hover:shadow-violet-500/25 transition-all duration-300 hover:scale-105 active:scale-95">
-            <span>API Key</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
         </div>
 
         {/* --- Mobile Menu Toggle --- */}
@@ -125,16 +123,13 @@ const Navbar = () => {
                 </motion.div>
               ))}
               
-              <div className="pt-4 mt-2 border-t border-slate-200/60 flex flex-col gap-3">
+              <div className="pt-4 mt-2 border-t border-slate-200/60 flex flex-col">
                 <Link 
                   to="/login" 
-                  className="w-full text-center py-3.5 rounded-2xl bg-white text-slate-700 font-bold border border-slate-200 shadow-sm active:bg-slate-50 transition-colors"
+                  className="w-full text-center py-3.5 rounded-2xl bg-slate-900 text-white font-bold shadow-xl shadow-slate-900/20 active:scale-95 transition-transform"
                 >
                   Log in
                 </Link>
-                <button className="w-full py-3.5 rounded-2xl bg-slate-900 text-white font-bold shadow-xl shadow-slate-900/20 active:scale-95 transition-transform">
-                  Get Started
-                </button>
               </div>
             </div>
           </motion.div>

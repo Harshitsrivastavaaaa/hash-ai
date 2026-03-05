@@ -24,14 +24,12 @@ import {
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
-// --- THEME CONFIGURATION ---
 const theme = {
   accent: "text-violet-600",
   gradientText: "from-violet-600 via-fuchsia-500 to-sky-500",
   buttonPrimary: "bg-violet-600 hover:bg-violet-500",
 };
 
-// --- DATA ---
 const features = [
   {
     icon: <Bot />,
@@ -77,7 +75,6 @@ const features = [
   },
 ];
 
-// --- ANIMATIONS ---
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeInOut } }
@@ -87,8 +84,6 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
 };
-
-// --- HELPER COMPONENTS ---
 
 const SpotlightCard = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => {
   const divRef = useRef<HTMLDivElement>(null);
@@ -276,10 +271,6 @@ const Home = () => {
       <section className="relative z-10 min-h-screen flex flex-col justify-center items-center pt-32 pb-20">
         <div className="container mx-auto px-6 max-w-7xl flex flex-col items-center text-center">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="flex flex-col items-center w-full max-w-5xl">
-            <motion.div variants={fadeInUp} className={`mb-8 inline-flex gap-2 px-4 py-2 rounded-full backdrop-blur-xl bg-white/50 border border-white/60 shadow-lg shadow-violet-500/10`}>
-              <Sparkles className={`w-4 h-4 ${theme.accent}`} />
-              <span className="text-sm font-semibold text-slate-700">Hash# v4.0 is Live</span>
-            </motion.div>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-8 leading-[1.1] flex flex-wrap justify-center gap-x-4">
               {headlineWords.map((word, i) => (
