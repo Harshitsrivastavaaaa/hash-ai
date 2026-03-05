@@ -34,7 +34,7 @@ const Navbar = () => {
       <nav
         className={`fixed z-50 transition-all duration-500 ease-in-out ${
           scrolled
-            ? 'top-4 left-1/2 -translate-x-1/2 w-[90%] md:w-[70%] max-w-5xl rounded-full border border-white/10 bg-[#030014]/60 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] py-3 px-6'
+            ? 'top-4 left-1/2 -translate-x-1/2 w-[90%] md:w-[70%] max-w-5xl rounded-full border border-white/80 bg-white/50 backdrop-blur-xl shadow-xl shadow-slate-200/50 py-3 px-6'
             : 'top-0 w-full border-b border-transparent bg-transparent py-6 px-6'
         }`}
       >
@@ -42,10 +42,10 @@ const Navbar = () => {
           
           {/* --- Logo --- */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className={`relative flex items-center justify-center rounded-lg transition-all duration-300 ${scrolled ? 'p-1' : 'p-1.5 bg-fuchsia-500/10 border border-fuchsia-500/20'}`}>
-               <BrainCircuit className={`text-fuchsia-400 transition-all ${scrolled ? 'w-5 h-5' : 'w-6 h-6'}`} />
+            <div className={`relative flex items-center justify-center rounded-lg transition-all duration-300 ${scrolled ? 'p-1' : 'p-1.5 bg-violet-100 border border-violet-200'}`}>
+               <BrainCircuit className={`text-violet-600 transition-all ${scrolled ? 'w-5 h-5' : 'w-6 h-6'}`} />
             </div>
-            <span className={`font-bold tracking-tight text-white transition-all ${scrolled ? 'text-lg' : 'text-xl'}`}>
+            <span className={`font-extrabold tracking-tight text-slate-900 transition-all ${scrolled ? 'text-lg' : 'text-xl'}`}>
               Hash#AI
             </span>
           </Link>
@@ -56,7 +56,7 @@ const Navbar = () => {
               <a 
                 key={link.name} 
                 href={link.href} 
-                className="text-sm font-medium text-gray-300 hover:text-white px-4 py-2 rounded-full hover:bg-white/5 transition-all duration-200"
+                className="text-sm font-semibold text-slate-600 hover:text-violet-700 px-4 py-2 rounded-full hover:bg-white/60 transition-all duration-200"
               >
                 {link.name}
               </a>
@@ -67,16 +67,18 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-4">
             <Link 
               to="/login" 
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              className="text-sm font-bold text-slate-600 hover:text-violet-700 transition-colors"
             >
               Log in
             </Link>
             <button className={`
-              group relative overflow-hidden rounded-full font-semibold text-sm text-white transition-all duration-300
-              ${scrolled ? 'bg-fuchsia-600 px-5 py-2' : 'bg-white/5 border border-white/10 px-6 py-2.5 hover:border-fuchsia-500/50'}
+              group relative overflow-hidden rounded-full font-bold text-sm transition-all duration-300
+              ${scrolled 
+                ? 'bg-violet-600 text-white px-5 py-2 shadow-md shadow-violet-500/25' 
+                : 'bg-white/60 border border-slate-200 text-slate-800 px-6 py-2.5 hover:border-violet-300 hover:bg-white'}
             `}>
-              <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative flex items-center gap-2">
+              <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-fuchsia-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className={`relative flex items-center gap-2 ${scrolled ? 'text-white' : 'text-slate-800 group-hover:text-white transition-colors duration-300'}`}>
                 API Key <ChevronRight className="w-3.5 h-3.5" />
               </span>
             </button>
@@ -84,7 +86,7 @@ const Navbar = () => {
 
           {/* --- Mobile Toggle --- */}
           <button 
-            className="md:hidden text-white hover:text-fuchsia-400 transition-colors"
+            className="md:hidden text-slate-800 hover:text-violet-600 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X /> : <Menu />}
@@ -97,9 +99,9 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            animate={{ opacity: 1, backdropFilter: "blur(12px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(16px)" }}
             exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            className="fixed inset-0 z-40 bg-[#030014]/90 pt-24 px-6 md:hidden"
+            className="fixed inset-0 z-40 bg-slate-50/90 pt-24 px-6 md:hidden border-b border-white/50 shadow-2xl"
           >
             <div className="flex flex-col space-y-4">
               {navLinks.map((link, i) => (
@@ -109,7 +111,7 @@ const Navbar = () => {
                   transition={{ delay: i * 0.1 }}
                   key={link.name} 
                   href={link.href} 
-                  className="text-2xl font-medium text-white hover:text-fuchsia-400 transition-colors py-2 border-b border-white/5"
+                  className="text-2xl font-bold text-slate-800 hover:text-violet-600 transition-colors py-3 border-b border-slate-200/50"
                 >
                   {link.name}
                 </motion.a>
@@ -122,11 +124,11 @@ const Navbar = () => {
               >
                 <Link 
                   to="/login" 
-                  className="w-full text-center py-3 rounded-xl border border-white/10 text-white font-medium"
+                  className="w-full text-center py-3 rounded-2xl border-2 border-slate-200 text-slate-700 font-bold hover:bg-slate-100 transition-colors"
                 >
                   Log in
                 </Link>
-                <button className="w-full py-3 rounded-xl bg-gradient-to-r from-fuchsia-600 to-purple-600 text-white font-bold shadow-lg shadow-fuchsia-900/20">
+                <button className="w-full py-3 rounded-2xl bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white font-bold shadow-lg shadow-violet-500/25 active:scale-95 transition-transform">
                   Get Started
                 </button>
               </motion.div>
