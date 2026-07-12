@@ -3,7 +3,10 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Solutions from './Pages/Solutions';
 import Research from './Pages/Research';
+<<<<<<< HEAD
 import Docs from './Pages/Docs'
+=======
+>>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
 
 const App = () => {
   return (
@@ -15,7 +18,10 @@ const App = () => {
          <Route path="/about" element={<About />} />
          <Route path="/solutions" element={<Solutions />} />
          <Route path="/research" element={<Research />} />
+<<<<<<< HEAD
          <Route path="/Docs" element={<Docs />} />
+=======
+>>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
        </Routes>
       </HashRouter>
     </div>

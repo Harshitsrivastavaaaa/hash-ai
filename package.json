@@ -13,7 +13,10 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@tailwindcss/postcss": "^4.3.1",
+=======
+>>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
     "framer-motion": "^12.23.26",
     "gh-pages": "^6.3.0",
     "lucide-react": "^0.562.0",
