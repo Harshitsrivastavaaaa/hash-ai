@@ -1,13 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-export default defineConfig(({ command }) => ({
+export default defineConfig({
   plugins: [react()],
-  base: command === 'build' ? '/hash-ai-main/' : '/',
-  
+  base: "/hash-ai/",
   server: {
     watch: {
       usePolling: true,
     }
   }
-}))
+})
