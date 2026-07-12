@@ -25,11 +25,6 @@ import {
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
-const theme = {
-  accent: "text-violet-600",
-  gradientText: "from-violet-600 via-fuchsia-500 to-sky-500",
-  buttonPrimary: "bg-violet-600 hover:bg-violet-500",
-};
 
 // --- DOCS NAVIGATION DATA ---
 const navSections = [

@@ -1,10 +1,9 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import {
   motion,
   useScroll,
   useTransform,
   useMotionValue,
-  easeInOut,
 } from "framer-motion";
 import {
   FileText,

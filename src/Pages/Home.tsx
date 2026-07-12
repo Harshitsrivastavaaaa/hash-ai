@@ -15,7 +15,6 @@ import {
   Terminal,
   Globe,
   Code2,
-  Sparkles,
   CheckCircle2,
   Copy,
   Check
