@@ -9,11 +9,7 @@ const Navbar = () => {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const location = useLocation();
 
-<<<<<<< HEAD
   
-=======
-  // Handle scroll effect for dynamic sizing
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
@@ -31,11 +27,7 @@ const Navbar = () => {
     { name: 'Solutions', href: '/solutions' },
     { name: 'Research', href: '/research' },
     { name: 'Pricing', href: '#' },
-<<<<<<< HEAD
     { name: 'Docs', href: '/Docs' },
-=======
-    { name: 'Docs', href: '#' },
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
   ];
 
   return (

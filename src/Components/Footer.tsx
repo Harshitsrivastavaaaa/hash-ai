@@ -53,11 +53,7 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-6">Company</h4>
             <ul className="space-y-4 text-sm text-gray-400">
-<<<<<<< HEAD
               <li><a href="/about" className="hover:text-fuchsia-400 transition-colors">About Us</a></li>
-=======
-              <li><a href="/About" className="hover:text-fuchsia-400 transition-colors">About Us</a></li>
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
               <li>
                 <a href="#" className="hover:text-fuchsia-400 transition-colors">Careers</a> 
                 <span className="text-[10px] bg-fuchsia-500/10 border border-fuchsia-500/20 text-fuchsia-300 px-2 py-0.5 rounded-full ml-2">Hiring</span>

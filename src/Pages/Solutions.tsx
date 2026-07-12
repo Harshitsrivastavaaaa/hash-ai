@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect, useRef } from "react";
 import {
   motion,
@@ -7,10 +6,6 @@ import {
   useTransform,
   useMotionValue
 } from "framer-motion";
-=======
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
 import {
   Code2,
   Image as ImageIcon,
@@ -35,7 +30,6 @@ import {
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
-<<<<<<< HEAD
 const theme = {
   accent: "text-violet-600",
   gradientText: "from-violet-600 via-fuchsia-500 to-sky-500",
@@ -44,19 +38,12 @@ const theme = {
 
 // --- TOOL DATA ---
 // explicitly defining full Tailwind classes prevents purge issues
-=======
-// --- TOOL DATA ---
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
 const tools = [
   {
     id: "data",
     title: "Intelligence",
     icon: <BarChart3 className="w-4 h-4" />,
-<<<<<<< HEAD
     color: { text: "text-sky-600", bg: "bg-sky-100", border: "border-sky-200", fill: "bg-sky-500", glow: "shadow-sky-500/20" },
-=======
-    color: "cyan",
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
     features: [
       { title: "Predictive Modeling", icon: <TrendingUp />, desc: "Forecast revenue with 98% accuracy using historical tensors." },
       { title: "Anomaly Detection", icon: <Share2 />, desc: "Real-time outlier flagging in terabyte-scale datasets." },
@@ -67,11 +54,7 @@ const tools = [
     id: "code",
     title: "Code Synth",
     icon: <Code2 className="w-4 h-4" />,
-<<<<<<< HEAD
     color: { text: "text-violet-600", bg: "bg-violet-100", border: "border-violet-200", fill: "bg-violet-500", glow: "shadow-violet-500/20" },
-=======
-    color: "blue",
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
     features: [
       { title: "Polyglot Engine", icon: <Terminal />, desc: "Native support for Rust, Go, Python, and TypeScript." },
       { title: "Auto-Refactor", icon: <GitBranch />, desc: "Intelligent legacy code modernization agent." },
@@ -82,11 +65,7 @@ const tools = [
     id: "image",
     title: "Diffusion",
     icon: <ImageIcon className="w-4 h-4" />,
-<<<<<<< HEAD
     color: { text: "text-fuchsia-600", bg: "bg-fuchsia-100", border: "border-fuchsia-200", fill: "bg-fuchsia-500", glow: "shadow-fuchsia-500/20" },
-=======
-    color: "fuchsia",
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
     features: [
       { title: "Vector Assets", icon: <Layers />, desc: "Generate infinite-resolution SVG icons and illustrations." },
       { title: "Texture Synthesis", icon: <Wand2 />, desc: "PBR-ready material maps for 3D environments." },
@@ -97,11 +76,7 @@ const tools = [
     id: "math",
     title: "Solver",
     icon: <Sigma className="w-4 h-4" />,
-<<<<<<< HEAD
     color: { text: "text-amber-600", bg: "bg-amber-100", border: "border-amber-200", fill: "bg-amber-500", glow: "shadow-amber-500/20" },
-=======
-    color: "amber",
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
     features: [
       { title: "Symbolic Logic", icon: <Cpu />, desc: "Step-by-step proofs for complex calculus and algebra." },
       { title: "Physics Engine", icon: <Layers />, desc: "Simulation of rigid body dynamics and fluid systems." },
@@ -112,11 +87,7 @@ const tools = [
     id: "reason",
     title: "Reasoning",
     icon: <BrainCircuit className="w-4 h-4" />,
-<<<<<<< HEAD
     color: { text: "text-emerald-600", bg: "bg-emerald-100", border: "border-emerald-200", fill: "bg-emerald-500", glow: "shadow-emerald-500/20" },
-=======
-    color: "emerald",
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
     features: [
       { title: "Chain-of-Thought", icon: <BrainCircuit />, desc: "Transparency in decision making processes." },
       { title: "Legal Analysis", icon: <Share2 />, desc: "Contract review and risk assessment automation." },
@@ -125,7 +96,6 @@ const tools = [
   },
 ];
 
-<<<<<<< HEAD
 // --- SHARED UI COMPONENTS ---
 
 const SpotlightCard = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => {
@@ -192,34 +162,12 @@ const CodePreview = () => (
       <span className="text-violet-600 font-bold">const</span> initSwarm = <span className="text-violet-600">async</span> (config: NeuralConfig) =&gt; {"{"}<br />
       &nbsp;&nbsp;<span className="text-violet-600 font-bold">await</span> Core.connect(<span className="text-emerald-600">"wss://edge.hash.ai"</span>);<br />
       &nbsp;&nbsp;<span className="text-violet-600 font-bold">return</span> <span className="text-violet-600">new</span> AgentSwarm(config);<br />
-=======
-// --- PREVIEW COMPONENTS ---
-
-const CodePreview = () => (
-  <div className="font-mono text-sm leading-relaxed p-8 h-full bg-[#0d0d0d]">
-    <div className="flex gap-2 mb-6 opacity-50">
-      <div className="w-3 h-3 rounded-full bg-red-500" />
-      <div className="w-3 h-3 rounded-full bg-yellow-500" />
-      <div className="w-3 h-3 rounded-full bg-green-500" />
-    </div>
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-      <span className="text-fuchsia-400">interface</span> <span className="text-yellow-200">NeuralConfig</span> {"{"} <br />
-      &nbsp;&nbsp;model: <span className="text-green-400">"hash-v4-turbo"</span>;<br />
-      &nbsp;&nbsp;quantization: <span className="text-blue-400">"int8"</span>;<br />
-      &nbsp;&nbsp;context_window: <span className="text-orange-400">128000</span>;<br />
-      {"}"} <br /> <br />
-      <span className="text-gray-500">// Auto-generating implementation...</span><br />
-      <span className="text-fuchsia-400">const</span> initSwarm = <span className="text-blue-400">async</span> (config: NeuralConfig) =&gt; {"{"}<br />
-      &nbsp;&nbsp;<span className="text-fuchsia-400">await</span> Core.connect(<span className="text-green-400">"wss://edge.hash.ai"</span>);<br />
-      &nbsp;&nbsp;<span className="text-blue-400">return</span> <span className="text-fuchsia-400">new</span> AgentSwarm(config);<br />
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
       {"}"}
     </motion.div>
   </div>
 );
 
 const DataPreview = () => (
-<<<<<<< HEAD
   <div className="flex flex-col h-full p-8 space-y-6 bg-white/40">
     <div className="grid grid-cols-2 gap-4">
       <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="bg-white/60 border border-white/80 p-4 rounded-xl shadow-sm">
@@ -236,39 +184,15 @@ const DataPreview = () => (
       </motion.div>
     </div>
     <div className="flex-1 bg-white/60 border border-white/80 rounded-xl p-6 flex items-end justify-between gap-4 shadow-sm">
-=======
-  <div className="flex flex-col h-full p-8 space-y-6 bg-[#0d0d0d]">
-    <div className="grid grid-cols-2 gap-4">
-      <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="bg-white/5 border border-white/10 p-4 rounded-xl">
-        <div className="text-gray-400 text-xs uppercase tracking-wider mb-1">Revenue</div>
-        <div className="text-3xl font-bold text-white flex items-center gap-2">
-          $1.2M <TrendingUp className="w-5 h-5 text-green-400" />
-        </div>
-      </motion.div>
-      <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.1 }} className="bg-white/5 border border-white/10 p-4 rounded-xl">
-        <div className="text-gray-400 text-xs uppercase tracking-wider mb-1">Growth</div>
-        <div className="text-3xl font-bold text-white flex items-center gap-2">
-          +24% <PieChart className="w-5 h-5 text-cyan-400" />
-        </div>
-      </motion.div>
-    </div>
-    <div className="flex-1 bg-white/5 border border-white/10 rounded-xl p-6 flex items-end justify-between gap-4">
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
       {[40, 70, 50, 90, 65, 85, 100].map((height, i) => (
         <motion.div
           key={i}
           initial={{ height: 0 }}
           animate={{ height: `${height}%` }}
           transition={{ delay: i * 0.1, duration: 0.8, type: "spring" }}
-<<<<<<< HEAD
           className="w-full bg-sky-200 hover:bg-sky-300 rounded-t-md transition-colors relative group border border-sky-300/50"
         >
           <div className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs font-bold text-sky-800 opacity-0 group-hover:opacity-100 transition-opacity bg-white px-2 py-1 rounded shadow-sm border border-slate-100">
-=======
-          className="w-full bg-cyan-500/20 hover:bg-cyan-400/40 rounded-t transition-colors relative group"
-        >
-          <div className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs text-cyan-300 opacity-0 group-hover:opacity-100 transition-opacity bg-black/50 px-2 py-1 rounded">
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
             {height}%
           </div>
         </motion.div>
@@ -278,109 +202,63 @@ const DataPreview = () => (
 );
 
 const ImagePreview = () => (
-<<<<<<< HEAD
   <div className="relative h-full w-full flex items-center justify-center overflow-hidden bg-white/40">
-=======
-  <div className="relative h-full w-full flex items-center justify-center overflow-hidden bg-[#0d0d0d]">
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
     <motion.div
       initial={{ scale: 1.1, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 1 }}
-<<<<<<< HEAD
       className="absolute inset-0 bg-gradient-to-br from-fuchsia-100/50 via-violet-100/50 to-sky-100/50 z-0"
-=======
-      className="absolute inset-0 bg-gradient-to-br from-fuchsia-900/40 via-purple-900/40 to-blue-900/40 z-0"
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
     />
     <div className="relative z-10 text-center">
       <motion.div 
         animate={{ rotate: 360 }}
         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-<<<<<<< HEAD
         className="w-24 h-24 border-2 border-dashed border-fuchsia-300 rounded-full mx-auto mb-6 flex items-center justify-center bg-white/50 backdrop-blur-sm"
       >
         <Wand2 className="w-10 h-10 text-fuchsia-600" />
       </motion.div>
       <p className="text-fuchsia-700 font-mono font-bold animate-pulse tracking-widest uppercase text-sm">Rendering Assets...</p>
-=======
-        className="w-24 h-24 border-2 border-dashed border-white/20 rounded-full mx-auto mb-6 flex items-center justify-center"
-      >
-        <Wand2 className="w-10 h-10 text-fuchsia-400" />
-      </motion.div>
-      <p className="text-fuchsia-200 font-mono animate-pulse tracking-widest uppercase text-sm">Rendering Assets...</p>
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
     </div>
     <motion.div 
       animate={{ top: ["0%", "100%"] }}
       transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-<<<<<<< HEAD
       className="absolute left-0 w-full h-[2px] bg-fuchsia-400 shadow-[0_0_20px_rgba(192,38,211,0.5)] z-20"
-=======
-      className="absolute left-0 w-full h-[2px] bg-fuchsia-500/50 shadow-[0_0_20px_rgba(232,121,249,0.5)] z-20"
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
     />
   </div>
 );
 
 const MathPreview = () => (
-<<<<<<< HEAD
   <div className="flex flex-col justify-center h-full space-y-8 px-12 bg-white/40">
     <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
       <p className="text-slate-500 text-xs mb-2 uppercase tracking-widest font-bold">Input Equation</p>
       <div className="text-3xl font-serif italic text-slate-800">∫ (3x² + 2x + 5) dx</div>
-=======
-  <div className="flex flex-col justify-center h-full space-y-8 px-12 bg-[#0d0d0d]">
-    <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
-      <p className="text-gray-500 text-xs mb-2 uppercase tracking-widest">Input Equation</p>
-      <div className="text-3xl font-serif italic text-white">∫ (3x² + 2x + 5) dx</div>
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
     </motion.div>
     
     <motion.div 
       initial={{ height: 0, opacity: 0 }} 
       animate={{ height: "auto", opacity: 1 }} 
       transition={{ delay: 0.5 }}
-<<<<<<< HEAD
       className="border-l-4 border-amber-300 pl-6 py-2"
     >
       <p className="text-amber-600 text-xs mb-2 uppercase tracking-wide font-bold">Step 1: Power Rule</p>
       <div className="text-xl font-serif text-slate-600">= 3(x³/3) + 2(x²/2) + 5x + C</div>
-=======
-      className="border-l-4 border-amber-500/30 pl-6 py-2"
-    >
-      <p className="text-amber-400 text-xs mb-2 uppercase tracking-wide">Step 1: Power Rule</p>
-      <div className="text-xl font-serif text-gray-300">= 3(x³/3) + 2(x²/2) + 5x + C</div>
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
     </motion.div>
 
     <motion.div 
       initial={{ opacity: 0, scale: 0.9 }} 
       animate={{ opacity: 1, scale: 1 }} 
       transition={{ delay: 1 }}
-<<<<<<< HEAD
       className="bg-amber-50 border border-amber-200 p-6 rounded-xl shadow-sm"
     >
       <p className="text-slate-500 text-xs mb-2 uppercase tracking-widest font-bold">Final Solution</p>
       <div className="text-3xl font-serif text-amber-600 font-black">x³ + x² + 5x + C</div>
-=======
-      className="bg-amber-500/10 border border-amber-500/20 p-6 rounded-xl"
-    >
-      <p className="text-gray-500 text-xs mb-2 uppercase tracking-widest">Final Solution</p>
-      <div className="text-3xl font-serif text-amber-400 font-bold">x³ + x² + 5x + C</div>
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
     </motion.div>
   </div>
 );
 
 const ReasonPreview = () => (
-<<<<<<< HEAD
   <div className="space-y-6 pt-8 px-8 h-full bg-white/40">
     <div className="flex items-center gap-3 text-emerald-600 mb-8 pb-4 border-b border-emerald-200/50">
-=======
-  <div className="space-y-6 pt-8 px-8 h-full bg-[#0d0d0d]">
-    <div className="flex items-center gap-3 text-emerald-400 mb-8 pb-4 border-b border-white/5">
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
       <BrainCircuit className="w-6 h-6 animate-pulse" />
       <span className="text-sm font-bold uppercase tracking-wider">Reasoning Engine v4.2</span>
     </div>
@@ -393,15 +271,9 @@ const ReasonPreview = () => (
         transition={{ delay: i * 0.4 }}
         className="flex items-center gap-4"
       >
-<<<<<<< HEAD
         <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
         <span className="text-base text-slate-700 font-mono font-medium">{step}</span>
         {i === 3 && <span className="ml-auto text-xs text-emerald-600 font-black animate-pulse">COMPLETE</span>}
-=======
-        <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981]" />
-        <span className="text-base text-gray-300 font-mono">{step}</span>
-        {i === 3 && <span className="ml-auto text-xs text-emerald-500 font-bold animate-pulse">COMPLETE</span>}
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
       </motion.div>
     ))}
   </div>
@@ -412,11 +284,8 @@ const ReasonPreview = () => (
 const Solutions = () => {
   const [activeToolId, setActiveToolId] = useState("data");
   const { scrollY } = useScroll();
-<<<<<<< HEAD
   
   // Parallax + Opacity Transforms matching Home
-=======
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
   const yBlob1 = useTransform(scrollY, [0, 1000], [0, 300]);
   const yBlob2 = useTransform(scrollY, [0, 1000], [0, -200]);
 
@@ -428,7 +297,6 @@ const Solutions = () => {
   }, []);
 
   return (
-<<<<<<< HEAD
     <div className="relative w-full min-h-screen font-sans bg-slate-50 text-slate-900 selection:bg-violet-200 overflow-x-hidden">
       <Navbar />
 
@@ -455,16 +323,6 @@ const Solutions = () => {
           transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
           className="absolute top-[20%] -right-[20%] w-[700px] h-[700px] rounded-full blur-[140px] will-change-transform" 
         />
-=======
-    <div className="relative w-full min-h-screen font-sans bg-[#030014] text-white selection:bg-fuchsia-500/30 overflow-x-hidden">
-      <Navbar />
-
-      {/* --- Dynamic Background --- */}
-      <div className="fixed inset-0 z-[1] pointer-events-none opacity-[0.04] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <motion.div style={{ y: yBlob1 }} className="absolute -top-[10%] -left-[10%] w-[900px] h-[900px] bg-cyan-600/20 rounded-full blur-[120px]" />
-        <motion.div style={{ y: yBlob2 }} className="absolute top-[20%] -right-[20%] w-[600px] h-[600px] bg-fuchsia-600/20 rounded-full blur-[120px]" />
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
       </div>
 
       {/* --- CONTENT --- */}
@@ -475,50 +333,30 @@ const Solutions = () => {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-<<<<<<< HEAD
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-100 border border-violet-200 text-violet-700 text-sm font-bold mb-8 shadow-sm"
-=======
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-cyan-300 text-sm font-medium mb-8"
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
           >
             <Cpu className="w-4 h-4" />
             <span>The Neural Suite</span>
           </motion.div>
-<<<<<<< HEAD
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-slate-900 leading-[1.1]">
             Tools for the <br />
             <span className={`text-transparent bg-clip-text bg-gradient-to-r ${theme.gradientText}`}>
-=======
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-            Tools for the <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-emerald-400">
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
               Cognitive Age.
             </span>
           </h1>
         </div>
 
         {/* --- CONTROL DECK (Navigation) --- */}
-<<<<<<< HEAD
         <div className="container mx-auto px-6 max-w-5xl mb-16">
           <div className="flex flex-wrap justify-center gap-3 md:gap-4 p-2 rounded-full bg-white/40 border border-white/60 backdrop-blur-xl shadow-lg shadow-slate-200/50 w-fit mx-auto">
-=======
-        <div className="container mx-auto px-6 max-w-5xl mb-12">
-          <div className="flex flex-wrap justify-center gap-3 md:gap-4 p-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md w-fit mx-auto">
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
             {tools.map((tool) => (
               <button
                 key={tool.id}
                 onClick={() => setActiveToolId(tool.id)}
                 className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
                   activeToolId === tool.id 
-<<<<<<< HEAD
                     ? `bg-white ${tool.color.text} shadow-md border border-slate-200` 
                     : `text-slate-500 hover:text-slate-800 hover:bg-white/50 border border-transparent`
-=======
-                    ? `bg-white/10 text-white shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] border border-white/20` 
-                    : `text-gray-400 hover:text-white hover:bg-white/5 border border-transparent`
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
                 }`}
               >
                 {tool.icon}
@@ -529,7 +367,6 @@ const Solutions = () => {
         </div>
 
         {/* --- MAIN STAGE (Preview Window) --- */}
-<<<<<<< HEAD
         <div className="container mx-auto px-6 max-w-6xl mb-24">
           <div className="relative rounded-3xl p-2 bg-white/20 backdrop-blur-sm border border-white/40 shadow-2xl shadow-slate-200/50">
             <div className="relative rounded-2xl bg-white/60 backdrop-blur-xl border border-white/80 overflow-hidden aspect-[16/10] md:aspect-[21/9] shadow-inner">
@@ -545,23 +382,6 @@ const Solutions = () => {
                   <span>Hash_Runtime_v4.0</span>
                   <span className="text-slate-300">|</span>
                   <span className={activeTool.color.text}>Active: {activeTool.title}</span>
-=======
-        <div className="container mx-auto px-6 max-w-6xl mb-16">
-          <div className="relative rounded-3xl p-1 bg-gradient-to-b from-white/10 to-transparent shadow-2xl">
-            <div className="relative rounded-[22px] bg-[#050505] border border-white/10 overflow-hidden aspect-[16/10] md:aspect-[21/9]">
-              
-              {/* Window Controls */}
-              <div className="absolute top-0 left-0 w-full h-12 bg-[#0a0a0a] border-b border-white/5 flex items-center justify-between px-6 z-20">
-                <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-white/20" />
-                  <div className="w-3 h-3 rounded-full bg-white/20" />
-                  <div className="w-3 h-3 rounded-full bg-white/20" />
-                </div>
-                <div className="flex items-center gap-2 text-xs font-mono text-gray-500 uppercase tracking-wider">
-                  <span>Hash_Runtime_v4.0</span>
-                  <span className="text-white/20">|</span>
-                  <span className={`text-${activeTool.color}-400`}>Active: {activeTool.title}</span>
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
                 </div>
               </div>
 
@@ -586,7 +406,6 @@ const Solutions = () => {
               </div>
 
               {/* Status Footer */}
-<<<<<<< HEAD
               <div className="absolute bottom-0 w-full h-8 bg-white/40 border-t border-white/50 flex items-center justify-between px-6 text-[10px] text-slate-500 font-mono font-bold z-20 backdrop-blur-md">
                 <div className="flex gap-4">
                   <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shadow-sm"></span> SYSTEM ONLINE</span>
@@ -595,19 +414,6 @@ const Solutions = () => {
                 <span className={activeTool.color.text}>ENCRYPTED // TLS 1.3</span>
               </div>
             </div>
-=======
-              <div className="absolute bottom-0 w-full h-8 bg-[#0a0a0a] border-t border-white/5 flex items-center justify-between px-6 text-[10px] text-gray-500 font-mono z-20">
-                <div className="flex gap-4">
-                  <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> SYSTEM ONLINE</span>
-                  <span>LATENCY: 12ms</span>
-                </div>
-                <span className={`text-${activeTool.color}-500`}>ENCRYPTED // TLS 1.3</span>
-              </div>
-            </div>
-            
-            {/* Ambient Glow Behind Stage */}
-            <div className={`absolute -inset-10 z-[-1] blur-[100px] opacity-20 transition-colors duration-700 bg-${activeTool.color}-600`} />
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
           </div>
         </div>
 
@@ -622,7 +428,6 @@ const Solutions = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ delay: i * 0.1 }}
-<<<<<<< HEAD
                   className="h-full"
                 >
                   <SpotlightCard className="h-full p-8 rounded-3xl bg-white/40 border border-white/60 backdrop-blur-xl hover:bg-white/60 shadow-xl shadow-slate-200/30 transition-all group">
@@ -632,22 +437,12 @@ const Solutions = () => {
                     <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
                     <p className="text-slate-600 font-medium leading-relaxed">{feature.desc}</p>
                   </SpotlightCard>
-=======
-                  className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group"
-                >
-                  <div className={`w-10 h-10 rounded-lg bg-${activeTool.color}-500/10 flex items-center justify-center text-${activeTool.color}-400 mb-4 group-hover:scale-110 transition-transform`}>
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
-                  <p className="text-sm text-gray-400">{feature.desc}</p>
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
                 </motion.div>
               ))}
             </AnimatePresence>
           </div>
         </div>
 
-<<<<<<< HEAD
         {/* --- CTA --- */}
         <div className="mt-32 text-center container mx-auto px-6 max-w-4xl relative">
           <motion.div animate={{ rotate: 360 }} transition={{ duration: 30, repeat: Infinity, ease: "linear" }} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-30 blur-[120px] bg-gradient-to-r from-sky-300 via-violet-300 to-fuchsia-300 pointer-events-none" />
@@ -659,25 +454,12 @@ const Solutions = () => {
                 Get Full Access <ArrowRight className="w-5 h-5" />
               </ShimmerButton>
             </div>
-=======
-        {/* CTA */}
-        <div className="mt-32 text-center container mx-auto px-6">
-          <div className="max-w-3xl mx-auto p-12 rounded-[30px] bg-gradient-to-b from-white/5 to-transparent border border-white/10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to generate insights?</h2>
-            <button className="bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-gray-200 transition-colors flex items-center gap-2 mx-auto shadow-xl shadow-white/10">
-              Get Full Access <ArrowRight className="w-4 h-4" />
-            </button>
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
           </div>
         </div>
 
       </div>
 
-<<<<<<< HEAD
       <div className="relative z-50 border-t border-slate-200/50 bg-slate-50/80 backdrop-blur-lg">
-=======
-      <div className="relative z-50 border-t border-white/5 bg-[#030014]">
->>>>>>> 3cc452e660b2df9954d40b7dbf730ec96d04710a
         <Footer />
       </div>
     </div>

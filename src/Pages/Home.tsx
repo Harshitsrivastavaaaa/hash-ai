@@ -277,7 +277,7 @@ const Home = () => {
                 <motion.span
                   key={i}
                   variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 12 } } }}
-                  className={`inline-block ${word.includes("Decentralized") || word.includes("Power") ? `text-transparent bg-clip-text bg-gradient-to-r ${theme.gradientText}` : "text-slate-900"}`}
+                  className={`inline-block ${word.includes("Samosa tikki") || word.includes("Pwerrr") ? `text-transparent bg-clip-text bg-gradient-to-r ${theme.gradientText}` : "text-slate-900"}`}
                 >
                   {word}
                 </motion.span>
