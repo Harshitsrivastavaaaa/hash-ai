@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig(({ command }) => ({
   plugins: [react()],
-  base: command === 'build' ? '/hash-ai/' : '/',
+  base: command === 'build' ? '/hash-ai-main/' : '/',
+  
   server: {
     watch: {
       usePolling: true,
