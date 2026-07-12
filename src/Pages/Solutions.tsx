@@ -80,7 +80,7 @@ const tools = [
     features: [
       { title: "Symbolic Logic", icon: <Cpu />, desc: "Step-by-step proofs for complex calculus and algebra." },
       { title: "Physics Engine", icon: <Layers />, desc: "Simulation of rigid body dynamics and fluid systems." },
-      { title: "Financial Math", icon: <TrendingUp />, desc: "Black-Scholes and Monte Carlo simulations." },
+      { title: "KOREABNMMM  Math", icon: <TrendingUp />, desc: "Black-Scholes and Monte Carlo simulations." },
     ]
   },
   {

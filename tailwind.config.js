@@ -21,3 +21,13 @@ export default {
   },
   plugins: [],
 }
+
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./Pages/**/*.{js,ts,jsx,tsx}", // <-- Check this capitalization!
+    "./Components/**/*.{js,ts,jsx,tsx}",
+  ],
+  // ...
+}

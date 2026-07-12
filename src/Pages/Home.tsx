@@ -40,7 +40,7 @@ const features = [
   },
   {
     icon: <Cpu />,
-    title: "Neural Edge",
+    title: "Neural Edgke",
     desc: "Run LLMs locally on consumer hardware with our optimized quantization engine.",
     bg: "bg-fuchsia-100",
     color: "text-fuchsia-600",
@@ -203,7 +203,8 @@ const Home = () => {
     featuresRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const headlineText = "Generative Intelligence. Decentralized Power.";
+  // Heading part 1 Which is also needed to be updated _________________________________________________________UPDATE
+  const headlineText = "Generative Intelligence. Decentralized Power."; 
   const headlineWords = headlineText.split(" ");
 
   return (
@@ -277,7 +278,7 @@ const Home = () => {
                 <motion.span
                   key={i}
                   variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 12 } } }}
-                  className={`inline-block ${word.includes("Samosa tikki") || word.includes("Pwerrr") ? `text-transparent bg-clip-text bg-gradient-to-r ${theme.gradientText}` : "text-slate-900"}`}
+                  className={`inline-block ${word.includes("Decentralized") || word.includes("Power") ? `text-transparent bg-clip-text bg-gradient-to-r ${theme.gradientText}` : "text-slate-900"}`}
                 >
                   {word}
                 </motion.span>
@@ -285,7 +286,7 @@ const Home = () => {
             </h1>
 
             <motion.p variants={fadeInUp} className="text-lg md:text-xl text-slate-600 mb-12 max-w-2xl leading-relaxed font-medium">
-              Hash#AI empowers developers to build <span className="text-slate-900 font-bold">autonomous agents</span> with secure, edge-computed generative models.
+              Hash#AI empos developers to build <span className="text-slate-900 font-bold">autonomous agents</span> with secure, edge-computed generative models.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-5 mb-24">
