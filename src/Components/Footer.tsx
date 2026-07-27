@@ -3,102 +3,112 @@ import { BrainCircuit, Github, Twitter, Linkedin, ArrowRight, MapPin } from 'luc
 
 const Footer = () => {
   return (
-    <footer className="bg-[#030014] pt-20 pb-10 relative overflow-hidden">
+    <footer className="bg-slate-50 pt-16 pb-8 relative overflow-hidden border-t border-slate-200/60 w-full">
       
-      {/* Top Gradient Line (Cosmic Glow) */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-fuchsia-500/50 to-transparent"></div>
+      {/* Ambient Glows */}
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-200/30 rounded-full mix-blend-multiply filter blur-[100px] opacity-60 pointer-events-none" />
+      <div className="absolute top-[-20%] right-0 w-[400px] h-[400px] bg-violet-200/30 rounded-full mix-blend-multiply filter blur-[100px] opacity-60 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="w-full px-6 md:px-12 relative z-10">
         
-        {/* Top Section: Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        {/* Top Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 mb-12">
           
-          {/* Column 1: Brand & Newsletter */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-2">
-              <div className="bg-fuchsia-500/10 border border-fuchsia-500/20 p-1.5 rounded-lg">
-                <BrainCircuit className="w-5 h-5 text-fuchsia-400" />
+          {/*  Brand & Newsletter  */}
+          <div className="lg:col-span-5 xl:col-span-4 space-y-6 lg:pr-8">
+            <div className="flex items-center gap-2.5">
+              <div className="relative bg-gradient-to-tr from-indigo-600 to-violet-500 p-2 rounded-xl shadow-sm">
+                <BrainCircuit className="w-4 h-4 text-white" />
               </div>
-              <span className="text-xl font-bold tracking-tight text-white">Hash#AI</span>
+              <span className="text-lg font-extrabold tracking-tight text-slate-900">
+                Hash<span className="text-indigo-600">.</span>
+              </span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-slate-500 text-sm leading-relaxed max-w-sm">
               Building the decentralized nervous system for the next generation of autonomous AI agents.
             </p>
             
             {/* Newsletter Input */}
-            <div className="relative max-w-xs group">
+            <div className="relative max-w-sm group mt-4">
               <input 
                 type="email" 
-                placeholder="Enter your email" 
-                className="w-full bg-white/5 border border-white/10 rounded-lg py-2.5 pl-4 pr-10 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-fuchsia-500/50 focus:ring-1 focus:ring-fuchsia-500/20 transition-all"
+                placeholder="Stay updated..." 
+                className="w-full bg-white border border-slate-200 shadow-sm rounded-full py-2.5 pl-5 pr-12 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-indigo-400 focus:ring-4 focus:ring-indigo-500/10 transition-all"
               />
-              <button className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-fuchsia-400 transition-colors p-1">
-                <ArrowRight className="w-4 h-4" />
+              <button className="absolute right-1.5 top-1/2 -translate-y-1/2 text-white bg-slate-900 hover:bg-indigo-600 rounded-full p-1.5 transition-colors shadow-sm">
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
 
-          {/* Column 2: Product */}
-          <div>
-            <h4 className="text-white font-semibold mb-6">Product</h4>
-            <ul className="space-y-4 text-sm text-gray-400">
-              <li><a href="#" className="hover:text-fuchsia-400 transition-colors">Edge Inference</a></li>
-              <li><a href="#" className="hover:text-fuchsia-400 transition-colors">Agent SDK</a></li>
-              <li><a href="#" className="hover:text-fuchsia-400 transition-colors">Model Marketplace</a></li>
-              <li><a href="#" className="hover:text-fuchsia-400 transition-colors">Changelog</a></li>
-            </ul>
-          </div>
-
-          {/* Column 3: Company */}
-          <div>
-            <h4 className="text-white font-semibold mb-6">Company</h4>
-            <ul className="space-y-4 text-sm text-gray-400">
-              <li><a href="/about" className="hover:text-fuchsia-400 transition-colors">About Us</a></li>
-              <li>
-                <a href="#" className="hover:text-fuchsia-400 transition-colors">Careers</a> 
-                <span className="text-[10px] bg-fuchsia-500/10 border border-fuchsia-500/20 text-fuchsia-300 px-2 py-0.5 rounded-full ml-2">Hiring</span>
-              </li>
-              <li><a href="#" className="hover:text-fuchsia-400 transition-colors">Legal & Privacy</a></li>
-              <li><a href="#" className="hover:text-fuchsia-400 transition-colors">Contact</a></li>
-            </ul>
-          </div>
-
-          {/* Column 4: Connect & Location */}
-          <div>
-            <h4 className="text-white font-semibold mb-6">Connect</h4>
-            
-            {/* Social Icons */}
-            <div className="flex gap-4 mb-8">
-              <SocialIcon icon={<Github className="w-5 h-5" />} />
-              <SocialIcon icon={<Twitter className="w-5 h-5" />} />
-              <SocialIcon icon={<Linkedin className="w-5 h-5" />} />
+          {/* Spacer for large screens */}
+          <div className="hidden xl:block xl:col-span-2"></div>
+          <div className="lg:col-span-7 xl:col-span-6 grid grid-cols-2 md:grid-cols-3 gap-8">
+            {/* Product */}
+            <div>
+              <h4 className="text-xs font-bold tracking-wider text-slate-400 uppercase mb-5">Product</h4>
+              <ul className="space-y-3.5 text-sm text-slate-600">
+                <li><a href="#" className="hover:text-indigo-600 transition-colors">Edge Inference</a></li>
+                <li><a href="#" className="hover:text-indigo-600 transition-colors">Agent SDK</a></li>
+                <li><a href="#" className="hover:text-indigo-600 transition-colors">Marketplace</a></li>
+                <li><a href="#" className="hover:text-indigo-600 transition-colors">Changelog</a></li>
+              </ul>
             </div>
 
-            {/* Location Line */}
-            <div className="flex items-start gap-3 text-sm text-gray-400">
-              <MapPin className="w-5 h-5 text-fuchsia-500 shrink-0 mt-0.5" />
-              <div className="space-y-1">
-                <p className="text-white font-medium">Headquarters</p>
-                <p>66 Neural Blvd, Suite 06</p>
-                <p>San Francisco, CA 94107</p>
+            {/* Company */}
+            <div>
+              <h4 className="text-xs font-bold tracking-wider text-slate-400 uppercase mb-5">Company</h4>
+              <ul className="space-y-3.5 text-sm text-slate-600">
+                <li><a href="/about" className="hover:text-indigo-600 transition-colors">About Us</a></li>
+                <li className="flex items-center">
+                  <a href="#" className="hover:text-indigo-600 transition-colors">Careers</a> 
+                  <span className="text-[9px] font-bold bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full ml-2 uppercase tracking-wide">Hiring</span>
+                </li>
+                <li><a href="#" className="hover:text-indigo-600 transition-colors">Privacy</a></li>
+                <li><a href="#" className="hover:text-indigo-600 transition-colors">Terms</a></li>
+              </ul>
+            </div>
+
+            {/* Connect */}
+            <div className="col-span-2 md:col-span-1">
+              <h4 className="text-xs font-bold tracking-wider text-slate-400 uppercase mb-5">Location</h4>
+              
+              {/* Location Line */}
+              <div className="flex items-start gap-2.5 text-sm text-slate-600 mb-6">
+                <MapPin className="w-4 h-4 text-indigo-500 shrink-0 mt-0.5" />
+                <div className="space-y-0.5">
+                  <p>66 Neural Blvd, Suite 06</p>
+                  <p>San Francisco, CA 94107</p>
+                </div>
+              </div>
+
+              {/* Social Icons */}
+              <div className="flex gap-4">
+                <a href="#" className="text-slate-400 hover:text-slate-900 transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-slate-400 hover:text-indigo-500 transition-colors">
+                  <Twitter className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
               </div>
             </div>
-
           </div>
-
         </div>
 
         {/* Bottom Section: Copyright */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Hash#AI Inc. All rights reserved.
+        <div className="pt-6 border-t border-slate-200/60 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-slate-500 text-sm">
+            © {new Date().getFullYear()} Hash#AI. All rights reserved.
           </p>
-          <div className="flex items-center gap-2 text-sm text-gray-400 bg-white/5 px-3 py-1 rounded-full border border-white/5">
+          <div className="flex items-center gap-2 text-xs font-medium text-slate-500 bg-white shadow-sm px-3 py-1.5 rounded-full border border-slate-200/80">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            Hash# Hyper Network Online
+            All systems operational
           </div>
         </div>
 
@@ -106,17 +116,5 @@ const Footer = () => {
     </footer>
   );
 };
-
-// Helper component for social icons
-const SocialIcon = ({ icon }: { icon: React.ReactNode }) => (
-  <a 
-    href="#" 
-    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-fuchsia-600 hover:text-white hover:border-fuchsia-500 transition-all duration-300 group"
-  >
-    <div className="group-hover:scale-110 transition-transform">
-      {icon}
-    </div>
-  </a>
-);
 
 export default Footer;

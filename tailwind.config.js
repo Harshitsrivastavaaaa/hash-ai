@@ -3,6 +3,8 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./Pages/**/*.{js,ts,jsx,tsx}", 
+    "./Components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -15,19 +17,26 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'], // Ensure you import a nice font like Inter later
-      }
+        sans: ['Inter', 'sans-serif'], 
+      },
+      keyframes: {
+        blob: {
+          "0%, 100%": { transform: "translateY(0) scale(1)" },
+          "50%": { transform: "translateY(-15px) scale(1.02)" },
+        },
+      },
+      animation: {
+        blob: "blob 6s ease-in-out infinite",
+      },
     },
   },
-  plugins: [],
-}
-
-module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./Pages/**/*.{js,ts,jsx,tsx}", // <-- Check this capitalization!
-    "./Components/**/*.{js,ts,jsx,tsx}",
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.animation-delay-2000': {
+          'animation-delay': '2s',
+        },
+      });
+    },
   ],
-  // ...
 }
