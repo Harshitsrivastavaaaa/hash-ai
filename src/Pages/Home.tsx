@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import {
   motion,
+  useScroll,
   useTransform,
   useMotionValue,
   easeInOut,
