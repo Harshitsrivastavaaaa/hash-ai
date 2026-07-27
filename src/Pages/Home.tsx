@@ -17,7 +17,9 @@ import {
   Code2,
   CheckCircle2,
   Copy,
-  Check
+  Check,
+  Sparkles,
+  Send
 } from "lucide-react";
 
 import Navbar from "../Components/Navbar";
@@ -39,7 +41,7 @@ const features = [
   },
   {
     icon: <Cpu />,
-    title: "Neural Edgke",
+    title: "Neural Edge",
     desc: "Run LLMs locally on consumer hardware with our optimized quantization engine.",
     bg: "bg-fuchsia-100",
     color: "text-fuchsia-600",
@@ -183,6 +185,65 @@ const CodeWindow = () => {
   );
 };
 
+// --- GEMINI STYLE SEARCH BOX ---
+const GeminiSearchBox = () => {
+  const [query, setQuery] = useState("");
+  const [isFocused, setIsFocused] = useState(false);
+
+  return (
+    <motion.div
+      variants={fadeInUp}
+      /* Added mt-12 mb-8 to give it more breathing room from the text above */
+      className={`relative w-full max-w-3xl mx-auto mt-12 mb-8 transition-all duration-500 ease-out ${
+        isFocused ? "scale-[1.02] shadow-violet-500/20" : "scale-100"
+      }`}
+    >
+      <div 
+        className={`relative flex items-center w-full bg-white/70 backdrop-blur-2xl border transition-colors duration-300 rounded-full p-2.5 shadow-2xl ${
+          isFocused ? "border-violet-400" : "border-white/80"
+        }`}
+      >
+        <div className="pl-4 pr-3 text-violet-600 flex-shrink-0">
+          <Sparkles className={`w-6 h-6 transition-transform duration-500 ${isFocused ? "rotate-12 scale-110" : ""}`} />
+        </div>
+        
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          placeholder="Ask Hash#AI to build something..."
+          className="w-full bg-transparent border-none outline-none text-lg text-slate-800 placeholder:text-slate-400/80 py-3 px-2 font-medium"
+        />
+        
+        <button
+          className={`p-3.5 rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0 ${
+            query.length > 0
+              ? "bg-violet-600 text-white shadow-lg shadow-violet-500/40 hover:bg-violet-500 cursor-pointer scale-100"
+              : "bg-slate-100 text-slate-400 cursor-default scale-95"
+          }`}
+        >
+          <Send className={`w-5 h-5 transition-transform duration-300 ${query.length > 0 ? "translate-x-0.5 -translate-y-0.5" : ""}`} />
+        </button>
+      </div>
+      
+      {/* Search Suggestions underneath */}
+      <div className={`flex flex-wrap justify-center gap-2 mt-4 transition-all duration-500 ${isFocused ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
+        {["Deploy a Rust API", "Optimize edge network", "Analyze swarm logs"].map((suggestion, i) => (
+          <button 
+            key={i}
+            onClick={() => setQuery(suggestion)}
+            className="text-xs font-semibold px-4 py-2 rounded-full bg-white/50 border border-slate-200 text-slate-600 hover:bg-white/80 hover:text-violet-600 transition-colors"
+          >
+            {suggestion}
+          </button>
+        ))}
+      </div>
+    </motion.div>
+  );
+};
+
 // --- MAIN PAGE ---
 const Home = () => {
   const featuresRef = useRef<HTMLElement>(null);
@@ -202,8 +263,7 @@ const Home = () => {
     featuresRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Heading part 1 Which is also needed to be updated _________________________________________________________UPDATE
-  const headlineText = "Generative Intelligence. Decentralized Power."; 
+  const headlineText = "Hello, Builder. What will we create today?"; 
   const headlineWords = headlineText.split(" ");
 
   return (
@@ -268,35 +328,35 @@ const Home = () => {
       </div>
 
       {/* --- HERO --- */}
-      <section className="relative z-10 min-h-screen flex flex-col justify-center items-center pt-32 pb-20">
+      {/* Increased padding-top (pt-48 md:pt-56) to push content down nicely */}
+      <section className="relative z-10 min-h-screen flex flex-col justify-center items-center pt-48 md:pt-56 pb-20">
         <div className="container mx-auto px-6 max-w-7xl flex flex-col items-center text-center">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="flex flex-col items-center w-full max-w-5xl">
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-8 leading-[1.1] flex flex-wrap justify-center gap-x-4">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1] flex flex-wrap justify-center gap-x-3">
               {headlineWords.map((word, i) => (
                 <motion.span
                   key={i}
                   variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 12 } } }}
-                  className={`inline-block ${word.includes("Decentralized") || word.includes("Power") ? `text-transparent bg-clip-text bg-gradient-to-r ${theme.gradientText}` : "text-slate-900"}`}
+                  className={`inline-block ${word.includes("create") || word.includes("today?") ? `text-transparent bg-clip-text bg-gradient-to-r ${theme.gradientText}` : "text-slate-900"}`}
                 >
                   {word}
                 </motion.span>
               ))}
             </h1>
 
-            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-slate-600 mb-12 max-w-2xl leading-relaxed font-medium">
-              Hash#AI empos developers to build <span className="text-slate-900 font-bold">autonomous agents</span> with secure, edge-computed generative models.
+            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-slate-600 mb-6 max-w-2xl leading-relaxed font-medium">
+              Hash#AI empowers developers to build <span className="text-slate-900 font-bold">autonomous agents</span> with secure, edge-computed generative models.
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-5 mb-24">
-              <ShimmerButton>Start Building <ArrowRight className="w-5 h-5" /></ShimmerButton>
-              <ShimmerButton secondary onClick={scrollToFeatures}>Read Whitepaper</ShimmerButton>
-            </motion.div>
+            {/* NEW SEARCH COMPONENT */}
+            <GeminiSearchBox />
+
           </motion.div>
         </div>
 
         {/* Floating Stats - Glassmorphism */}
-        <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 0.8 }} className="w-full px-6 flex justify-center">
+        <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 0.8 }} className="w-full px-6 flex justify-center mt-20">
           <div className="w-full max-w-5xl backdrop-blur-2xl rounded-3xl border border-white/80 bg-white/40 shadow-2xl shadow-slate-200/50 overflow-hidden">
             <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/40">
               {[
