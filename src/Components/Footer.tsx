@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrainCircuit, Github, Twitter, Linkedin, ArrowRight, MapPin } from 'lucide-react';
 
 const Footer = () => {
