@@ -6,7 +6,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 dotenv.config();
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
-const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -55,21 +55,27 @@ app.post('/api/generate', async (req: Request, res: Response): Promise<any> => {
     // Construct parts array for Multimodal support
     const contentParts: any[] = [];
 
+    // Add query text first (Standard practice for Gemini API)
+    if (query) {
+      contentParts.push({ text: query });
+    }
+
     // Add attachments if present
     if (attachments && Array.isArray(attachments)) {
       for (const item of attachments) {
+        // STRIP THE PREFIX: Ensure the data is purely base64
+        // Splits "data:image/png;base64,iVBOR..." and takes just the base64 part
+        const cleanBase64 = item.data.includes('base64,') 
+          ? item.data.split('base64,')[1] 
+          : item.data;
+
         contentParts.push({
           inlineData: {
             mimeType: item.mimeType,
-            data: item.data
+            data: cleanBase64
           }
         });
       }
-    }
-
-    // Add query text
-    if (query) {
-      contentParts.push(query);
     }
 
     console.log(`Received prompt for session: ${sessionId} (Attachments: ${attachments?.length || 0})`);
@@ -87,8 +93,13 @@ app.post('/api/generate', async (req: Request, res: Response): Promise<any> => {
     });
 
   } catch (error: any) {
-    console.error("Error generating response:", error);
-    return res.status(500).json({ error: "Failed to process multimodal prompt." });
+    // Log the actual SDK error message, not just the object
+    console.error("Error generating response:", error?.message || error);
+    
+    return res.status(500).json({ 
+      error: "Failed to process multimodal prompt.",
+      details: error?.message || "Unknown server error" 
+    });
   }
 });
 
